@@ -19,8 +19,6 @@ build:
   # no pytorch on windows in conda-forge, see
   # https://github.com/conda-forge/pytorch-cpu-feedstock/issues/32
   skip: true  # [win]
-  # Temporarily skip old python versions to prevent "out of space" error on CI
-  skip: true  # [py < 310]
   rpaths:
     - lib/
   # PyTorch libs are in site-packages intead of with other shared objects
@@ -34,7 +32,7 @@ requirements:
     - python
     - pip
     - pytorch
-  # We must have the CUDA variant of pytorch 
+  # We must have the CUDA variant of pytorch
     - pytorch =*=cuda*
     - setuptools
   run:
