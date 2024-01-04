@@ -1,4 +1,4 @@
-{% set version = "2.0.3" %}
+{% set version = "2.0.4" %}
 
 {% set cuda_major = environ.get("cuda_compiler_version", "11.2").split(".")[0]|int %}
 
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/carterbox/torch-radon/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3533cb7573cf4adb16338ddcdfa26e05fdac3b6d21a64cbe71fa8fc29083c9c2
+  url: https://github.com/carterbox/torch-radon/releases/download/v{{ version }}/torch-radon-v{{ version }}.zip
+  sha256: d61b6edeb986f58b5ffdfa5492407da303811ee82a10fc2189751e120dae14d6
 
 build:
-  number: 2
+  number: 0
   skip: true  # [cuda_compiler_version == "None"]
   skip: true  # [cuda_compiler_version == "10.2"]
   skip: true  # [cuda_compiler_version == "11.0"]
@@ -29,6 +29,12 @@ requirements:
     - {{ compiler('cuda') }}
     - {{ compiler('cxx') }}
   host:
+    - cuda-version {{ cuda_compiler_version }}
+  {% if cuda_major == 12 %}
+    - cuda-cudart-dev
+    - libcufft-dev
+    - libcurand-dev
+  {% endif %}
     - python
     - pip
     - pytorch
