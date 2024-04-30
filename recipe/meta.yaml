@@ -42,6 +42,7 @@ requirements:
     - pytorch =*=cuda*
     - setuptools
     - setuptools-scm
+    - toml
   run:
     - __cuda
     - python
