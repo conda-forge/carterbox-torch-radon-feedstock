@@ -41,6 +41,7 @@ requirements:
   # We must have the CUDA variant of pytorch
     - pytorch =*=cuda*
     - setuptools
+    - setuptools-scm
   run:
     - __cuda
     - python
