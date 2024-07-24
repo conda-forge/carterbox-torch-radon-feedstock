@@ -1,4 +1,4 @@
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 
 {% set cuda_major = environ.get("cuda_compiler_version", "11.2").split(".")[0]|int %}
 
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/carterbox/torch-radon/releases/download/v{{ version }}/torch-radon-v{{ version }}.zip
-  sha256: d61b6edeb986f58b5ffdfa5492407da303811ee82a10fc2189751e120dae14d6
+  sha256: 69ff0417bfc518b1ba9c5b7c279368835016af16320e34ec02fe4ca10c24b369
 
 build:
-  number: 2
+  number: 0
   skip: true  # [cuda_compiler_version == "None"]
   skip: true  # [cuda_compiler_version == "10.2"]
   skip: true  # [cuda_compiler_version == "11.0"]
