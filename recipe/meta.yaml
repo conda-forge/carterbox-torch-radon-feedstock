@@ -29,7 +29,6 @@ requirements:
     - cuda-version {{ cuda_compiler_version }}
   {% if cuda_major == 12 %}
     - cuda-cudart-dev
-    - libcufft-dev
     - libcurand-dev
   {% endif %}
     - python
