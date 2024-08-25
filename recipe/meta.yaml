@@ -19,10 +19,6 @@ build:
   # no pytorch on windows in conda-forge, see
   # https://github.com/conda-forge/pytorch-cpu-feedstock/issues/32
   skip: true  # [win]
-  rpaths:
-    - lib/
-  # PyTorch libs are in site-packages intead of with other shared objects
-    - {{ SP_DIR }}/torch/lib/
 
 requirements:
   build:
