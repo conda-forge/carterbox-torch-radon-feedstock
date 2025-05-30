@@ -32,7 +32,7 @@ requirements:
     - pip
     - pytorch
   # We must have the CUDA variant of pytorch
-    - pytorch =*=cuda*
+    - pytorch * cuda*
     - libtorch
     - setuptools
     - setuptools-scm
@@ -40,7 +40,7 @@ requirements:
   run:
     - __cuda
     - python
-    - pytorch =*=cuda*
+    - pytorch * cuda*
     - scipy
     - numpy
 
