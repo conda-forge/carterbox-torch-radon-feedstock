@@ -5,5 +5,7 @@ conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
 azure:
-  free_disk_space: True
+  free_disk_space: true
 conda_build_tool: rattler-build
+bot:
+  automerge: true
