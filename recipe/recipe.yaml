@@ -21,7 +21,7 @@ build:
   script:
     content: |
       export TORCH_CUDA_ARCH_LIST="${CF_TORCH_CUDA_ARCH_LIST}"
-      python -m pip install . --no-deps -vv
+      python -m pip install . --no-deps -vvv
 
 requirements:
   build:
