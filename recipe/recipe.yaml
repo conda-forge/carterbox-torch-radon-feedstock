@@ -19,9 +19,8 @@ build:
     - win
     - cuda_compiler_version in (None, "None")
   script:
-    env:
-      TORCH_CUDA_ARCH_LIST: "${CF_TORCH_CUDA_ARCH_LIST}"
     content: |
+      export TORCH_CUDA_ARCH_LIST="${CF_TORCH_CUDA_ARCH_LIST}"
       python -m pip install . --no-deps -vv
 
 requirements:
